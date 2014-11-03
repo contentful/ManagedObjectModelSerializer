@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10980171A0414D500193580 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980161A0414D500193580 /* main.swift */; };
+		A10980271A04159200193580 /* MOMSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = A10980261A04159200193580 /* MOMSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A109802D1A04159300193580 /* MOMSerializer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10980221A04159200193580 /* MOMSerializer.framework */; };
+		A10980341A04159300193580 /* MOMSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980331A04159300193580 /* MOMSerializerTests.swift */; };
+		A109803D1A0415F400193580 /* CoreDataExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A109803B1A0415F400193580 /* CoreDataExample.xcdatamodeld */; };
+		A109803F1A04162C00193580 /* ModelSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109803E1A04162C00193580 /* ModelSerializer.swift */; };
+		A10980451A04166D00193580 /* ECoXiS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980411A04166D00193580 /* ECoXiS.swift */; };
+		A10980461A04166D00193580 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980421A04166D00193580 /* Model.swift */; };
+		A10980471A04166D00193580 /* StringCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980431A04166D00193580 /* StringCreation.swift */; };
+		A10980481A04166D00193580 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980441A04166D00193580 /* Utilities.swift */; };
+		A109804B1A041FAE00193580 /* EntitySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980491A041EE900193580 /* EntitySerializer.swift */; };
+		A109804D1A042BE100193580 /* complex-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = A109804C1A042BE100193580 /* complex-test.xml */; };
+		A10980571A0790A900193580 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980511A0790A900193580 /* Command.swift */; };
+		A10980581A0790A900193580 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980521A0790A900193580 /* FileHandle.swift */; };
+		A10980591A0790A900193580 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10980531A0790A900193580 /* Info.plist */; };
+		A109805A1A0790A900193580 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980541A0790A900193580 /* Pipes.swift */; };
+		A109805B1A0790A900193580 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980551A0790A900193580 /* Stream.swift */; };
+		A109805C1A0790A900193580 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980561A0790A900193580 /* String.swift */; };
+		A109805E1A07989100193580 /* plist-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = A109805D1A07989100193580 /* plist-test.xml */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A109802E1A04159300193580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A109800B1A0414D500193580 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10980211A04159200193580;
+			remoteInfo = MOMSerializer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A10980111A0414D500193580 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A10980131A0414D500193580 /* ManagedObjectModelSerializer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ManagedObjectModelSerializer; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10980161A0414D500193580 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A10980221A04159200193580 /* MOMSerializer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MOMSerializer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10980251A04159200193580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10980261A04159200193580 /* MOMSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOMSerializer.h; sourceTree = "<group>"; };
+		A109802C1A04159300193580 /* MOMSerializerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOMSerializerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10980321A04159300193580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10980331A04159300193580 /* MOMSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOMSerializerTests.swift; sourceTree = "<group>"; };
+		A109803C1A0415F400193580 /* CoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataExample.xcdatamodel; sourceTree = "<group>"; };
+		A109803E1A04162C00193580 /* ModelSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSerializer.swift; sourceTree = "<group>"; };
+		A10980411A04166D00193580 /* ECoXiS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECoXiS.swift; sourceTree = "<group>"; };
+		A10980421A04166D00193580 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A10980431A04166D00193580 /* StringCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCreation.swift; sourceTree = "<group>"; };
+		A10980441A04166D00193580 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A10980491A041EE900193580 /* EntitySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySerializer.swift; sourceTree = "<group>"; };
+		A109804C1A042BE100193580 /* complex-test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "complex-test.xml"; sourceTree = "<group>"; };
+		A10980511A0790A900193580 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		A10980521A0790A900193580 /* FileHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
+		A10980531A0790A900193580 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10980541A0790A900193580 /* Pipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipes.swift; sourceTree = "<group>"; };
+		A10980551A0790A900193580 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		A10980561A0790A900193580 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A109805D1A07989100193580 /* plist-test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "plist-test.xml"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10980101A0414D500193580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A109801E1A04159200193580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10980291A04159300193580 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A109802D1A04159300193580 /* MOMSerializer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A109800A1A0414D500193580 = {
+			isa = PBXGroup;
+			children = (
+				A10980151A0414D500193580 /* Code */,
+				A10980301A04159300193580 /* Tests */,
+				A10980141A0414D500193580 /* Products */,
+				A10980241A04159200193580 /* Supporting Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A10980141A0414D500193580 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10980131A0414D500193580 /* ManagedObjectModelSerializer */,
+				A10980221A04159200193580 /* MOMSerializer.framework */,
+				A109802C1A04159300193580 /* MOMSerializerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10980151A0414D500193580 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				A10980401A04164B00193580 /* ECoXiS */,
+				A10980501A0790A900193580 /* SwiftShell */,
+				A10980491A041EE900193580 /* EntitySerializer.swift */,
+				A10980161A0414D500193580 /* main.swift */,
+				A10980261A04159200193580 /* MOMSerializer.h */,
+				A109803E1A04162C00193580 /* ModelSerializer.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		A10980241A04159200193580 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A10980251A04159200193580 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A10980301A04159300193580 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A109804C1A042BE100193580 /* complex-test.xml */,
+				A109803B1A0415F400193580 /* CoreDataExample.xcdatamodeld */,
+				A10980321A04159300193580 /* Info.plist */,
+				A10980331A04159300193580 /* MOMSerializerTests.swift */,
+				A109805D1A07989100193580 /* plist-test.xml */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A10980401A04164B00193580 /* ECoXiS */ = {
+			isa = PBXGroup;
+			children = (
+				A10980411A04166D00193580 /* ECoXiS.swift */,
+				A10980421A04166D00193580 /* Model.swift */,
+				A10980431A04166D00193580 /* StringCreation.swift */,
+				A10980441A04166D00193580 /* Utilities.swift */,
+			);
+			name = ECoXiS;
+			path = ../vendor/ECoXiS/ECoXiS;
+			sourceTree = "<group>";
+		};
+		A10980501A0790A900193580 /* SwiftShell */ = {
+			isa = PBXGroup;
+			children = (
+				A10980511A0790A900193580 /* Command.swift */,
+				A10980521A0790A900193580 /* FileHandle.swift */,
+				A10980531A0790A900193580 /* Info.plist */,
+				A10980541A0790A900193580 /* Pipes.swift */,
+				A10980551A0790A900193580 /* Stream.swift */,
+				A10980561A0790A900193580 /* String.swift */,
+			);
+			name = SwiftShell;
+			path = vendor/SwiftShell/SwiftShell;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A109801F1A04159200193580 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10980271A04159200193580 /* MOMSerializer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A10980121A0414D500193580 /* ManagedObjectModelSerializer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A109801A1A0414D500193580 /* Build configuration list for PBXNativeTarget "ManagedObjectModelSerializer" */;
+			buildPhases = (
+				A109800F1A0414D500193580 /* Sources */,
+				A10980101A0414D500193580 /* Frameworks */,
+				A10980111A0414D500193580 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ManagedObjectModelSerializer;
+			productName = ManagedObjectModelSerializer;
+			productReference = A10980131A0414D500193580 /* ManagedObjectModelSerializer */;
+			productType = "com.apple.product-type.tool";
+		};
+		A10980211A04159200193580 /* MOMSerializer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10980391A04159300193580 /* Build configuration list for PBXNativeTarget "MOMSerializer" */;
+			buildPhases = (
+				A109801D1A04159200193580 /* Sources */,
+				A109801E1A04159200193580 /* Frameworks */,
+				A109801F1A04159200193580 /* Headers */,
+				A10980201A04159200193580 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOMSerializer;
+			productName = MOMSerializer;
+			productReference = A10980221A04159200193580 /* MOMSerializer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A109802B1A04159300193580 /* MOMSerializerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A109803A1A04159300193580 /* Build configuration list for PBXNativeTarget "MOMSerializerTests" */;
+			buildPhases = (
+				A10980281A04159300193580 /* Sources */,
+				A10980291A04159300193580 /* Frameworks */,
+				A109802A1A04159300193580 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A109802F1A04159300193580 /* PBXTargetDependency */,
+			);
+			name = MOMSerializerTests;
+			productName = MOMSerializerTests;
+			productReference = A109802C1A04159300193580 /* MOMSerializerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A109800B1A0414D500193580 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Boris Bügling";
+				TargetAttributes = {
+					A10980121A0414D500193580 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					A10980211A04159200193580 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					A109802B1A04159300193580 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = A109800E1A0414D500193580 /* Build configuration list for PBXProject "ManagedObjectModelSerializer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A109800A1A0414D500193580;
+			productRefGroup = A10980141A0414D500193580 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10980121A0414D500193580 /* ManagedObjectModelSerializer */,
+				A10980211A04159200193580 /* MOMSerializer */,
+				A109802B1A04159300193580 /* MOMSerializerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10980201A04159200193580 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A109802A1A04159300193580 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10980591A0790A900193580 /* Info.plist in Resources */,
+				A109804D1A042BE100193580 /* complex-test.xml in Resources */,
+				A109805E1A07989100193580 /* plist-test.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A109800F1A0414D500193580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10980171A0414D500193580 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A109801D1A04159200193580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A109804B1A041FAE00193580 /* EntitySerializer.swift in Sources */,
+				A10980461A04166D00193580 /* Model.swift in Sources */,
+				A10980451A04166D00193580 /* ECoXiS.swift in Sources */,
+				A109803F1A04162C00193580 /* ModelSerializer.swift in Sources */,
+				A10980481A04166D00193580 /* Utilities.swift in Sources */,
+				A10980471A04166D00193580 /* StringCreation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10980281A04159300193580 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10980341A04159300193580 /* MOMSerializerTests.swift in Sources */,
+				A109805B1A0790A900193580 /* Stream.swift in Sources */,
+				A109805A1A0790A900193580 /* Pipes.swift in Sources */,
+				A109803D1A0415F400193580 /* CoreDataExample.xcdatamodeld in Sources */,
+				A109805C1A0790A900193580 /* String.swift in Sources */,
+				A10980571A0790A900193580 /* Command.swift in Sources */,
+				A10980581A0790A900193580 /* FileHandle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A109802F1A04159300193580 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10980211A04159200193580 /* MOMSerializer */;
+			targetProxy = A109802E1A04159300193580 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A10980181A0414D500193580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A10980191A0414D500193580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A109801B1A0414D500193580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A109801C1A0414D500193580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A10980351A04159300193580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A10980361A04159300193580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A10980371A04159300193580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A10980381A04159300193580 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A109800E1A0414D500193580 /* Build configuration list for PBXProject "ManagedObjectModelSerializer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10980181A0414D500193580 /* Debug */,
+				A10980191A0414D500193580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A109801A1A0414D500193580 /* Build configuration list for PBXNativeTarget "ManagedObjectModelSerializer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A109801B1A0414D500193580 /* Debug */,
+				A109801C1A0414D500193580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10980391A04159300193580 /* Build configuration list for PBXNativeTarget "MOMSerializer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10980351A04159300193580 /* Debug */,
+				A10980361A04159300193580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A109803A1A04159300193580 /* Build configuration list for PBXNativeTarget "MOMSerializerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10980371A04159300193580 /* Debug */,
+				A10980381A04159300193580 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A109803B1A0415F400193580 /* CoreDataExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A109803C1A0415F400193580 /* CoreDataExample.xcdatamodel */,
+			);
+			currentVersion = A109803C1A0415F400193580 /* CoreDataExample.xcdatamodel */;
+			path = CoreDataExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A109800B1A0414D500193580 /* Project object */;
+}
