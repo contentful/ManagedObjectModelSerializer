@@ -19,13 +19,15 @@
 		A10980481A04166D00193580 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980441A04166D00193580 /* Utilities.swift */; };
 		A109804B1A041FAE00193580 /* EntitySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980491A041EE900193580 /* EntitySerializer.swift */; };
 		A109804D1A042BE100193580 /* complex-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = A109804C1A042BE100193580 /* complex-test.xml */; };
-		A10980571A0790A900193580 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980511A0790A900193580 /* Command.swift */; };
-		A10980581A0790A900193580 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980521A0790A900193580 /* FileHandle.swift */; };
-		A10980591A0790A900193580 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10980531A0790A900193580 /* Info.plist */; };
-		A109805A1A0790A900193580 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980541A0790A900193580 /* Pipes.swift */; };
-		A109805B1A0790A900193580 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980551A0790A900193580 /* Stream.swift */; };
-		A109805C1A0790A900193580 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980561A0790A900193580 /* String.swift */; };
 		A109805E1A07989100193580 /* plist-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = A109805D1A07989100193580 /* plist-test.xml */; };
+		A1604DD61A124CDB003F916D /* AllTypes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1604DD21A1249FB003F916D /* AllTypes.xcdatamodeld */; };
+		A1604DD71A124CE0003F916D /* alltypes-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1604DD51A124CC2003F916D /* alltypes-test.xml */; };
+		A1DB6A811A12446C00F6E5C5 /* XMLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB6A801A12446C00F6E5C5 /* XMLTools.swift */; };
+		A1DB6A821A12451600F6E5C5 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980511A0790A900193580 /* Command.swift */; };
+		A1DB6A831A1245DE00F6E5C5 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980551A0790A900193580 /* Stream.swift */; };
+		A1DB6A841A1245FD00F6E5C5 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980521A0790A900193580 /* FileHandle.swift */; };
+		A1DB6A851A1245FF00F6E5C5 /* Pipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980541A0790A900193580 /* Pipes.swift */; };
+		A1DB6A861A12460200F6E5C5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10980561A0790A900193580 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,9 @@
 		A10980551A0790A900193580 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		A10980561A0790A900193580 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A109805D1A07989100193580 /* plist-test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "plist-test.xml"; sourceTree = "<group>"; };
+		A1604DD31A1249FB003F916D /* AllTypes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AllTypes.xcdatamodel; sourceTree = "<group>"; };
+		A1604DD51A124CC2003F916D /* alltypes-test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "alltypes-test.xml"; sourceTree = "<group>"; };
+		A1DB6A801A12446C00F6E5C5 /* XMLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,7 @@
 				A10980161A0414D500193580 /* main.swift */,
 				A10980261A04159200193580 /* MOMSerializer.h */,
 				A109803E1A04162C00193580 /* ModelSerializer.swift */,
+				A1DB6A801A12446C00F6E5C5 /* XMLTools.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 		A10980301A04159300193580 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A1604DD21A1249FB003F916D /* AllTypes.xcdatamodeld */,
+				A1604DD51A124CC2003F916D /* alltypes-test.xml */,
 				A109804C1A042BE100193580 /* complex-test.xml */,
 				A109803B1A0415F400193580 /* CoreDataExample.xcdatamodeld */,
 				A10980321A04159300193580 /* Info.plist */,
@@ -299,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10980591A0790A900193580 /* Info.plist in Resources */,
+				A1604DD71A124CE0003F916D /* alltypes-test.xml in Resources */,
 				A109804D1A042BE100193580 /* complex-test.xml in Resources */,
 				A109805E1A07989100193580 /* plist-test.xml in Resources */,
 			);
@@ -324,8 +332,14 @@
 				A10980461A04166D00193580 /* Model.swift in Sources */,
 				A10980451A04166D00193580 /* ECoXiS.swift in Sources */,
 				A109803F1A04162C00193580 /* ModelSerializer.swift in Sources */,
+				A1DB6A811A12446C00F6E5C5 /* XMLTools.swift in Sources */,
 				A10980481A04166D00193580 /* Utilities.swift in Sources */,
+				A1DB6A861A12460200F6E5C5 /* String.swift in Sources */,
 				A10980471A04166D00193580 /* StringCreation.swift in Sources */,
+				A1DB6A841A1245FD00F6E5C5 /* FileHandle.swift in Sources */,
+				A1DB6A851A1245FF00F6E5C5 /* Pipes.swift in Sources */,
+				A1DB6A831A1245DE00F6E5C5 /* Stream.swift in Sources */,
+				A1DB6A821A12451600F6E5C5 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,13 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1604DD61A124CDB003F916D /* AllTypes.xcdatamodeld in Sources */,
 				A10980341A04159300193580 /* MOMSerializerTests.swift in Sources */,
-				A109805B1A0790A900193580 /* Stream.swift in Sources */,
-				A109805A1A0790A900193580 /* Pipes.swift in Sources */,
 				A109803D1A0415F400193580 /* CoreDataExample.xcdatamodeld in Sources */,
-				A109805C1A0790A900193580 /* String.swift in Sources */,
-				A10980571A0790A900193580 /* Command.swift in Sources */,
-				A10980581A0790A900193580 /* FileHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +581,16 @@
 			);
 			currentVersion = A109803C1A0415F400193580 /* CoreDataExample.xcdatamodel */;
 			path = CoreDataExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		A1604DD21A1249FB003F916D /* AllTypes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1604DD31A1249FB003F916D /* AllTypes.xcdatamodel */,
+			);
+			currentVersion = A1604DD31A1249FB003F916D /* AllTypes.xcdatamodel */;
+			path = AllTypes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -10,30 +10,31 @@ import CoreData
 
 func attributeTypeToString(type : NSAttributeType) -> String {
     switch(type) {
+    case .BinaryDataAttributeType:
+        return "Binary"
+    case .BooleanAttributeType:
+        return "Boolean"
     case .DateAttributeType:
         return "Date"
+    case .DecimalAttributeType:
+        return "Decimal"
+    case .DoubleAttributeType:
+        return "Double"
     case .FloatAttributeType:
         return "Float"
     case .Integer16AttributeType:
         return "Integer 16"
+    case .Integer32AttributeType:
+        return "Integer 32"
+    case .Integer64AttributeType:
+        return "Integer 64"
     case .StringAttributeType:
         return "String"
+    case .TransformableAttributeType:
+        return "Transformable"
     default:
         return ""
     }
-
-    /*
-    TODO: Other attribute types
-case UndefinedAttributeType
-case Integer32AttributeType
-case Integer64AttributeType
-case DecimalAttributeType
-case DoubleAttributeType
-case BooleanAttributeType
-case BinaryDataAttributeType
-case TransformableAttributeType // If your attribute is of NSTransformableAttributeType, the attributeValueClassName must be set or attribute value class must implement NSCopying.
-case ObjectIDAttributeType
-*/
 }
 
 class EntitySerializer: NSObject {
@@ -55,7 +56,7 @@ class EntitySerializer: NSObject {
                 var value = defaultValue.description
 
                 switch(attribute.attributeType) {
-                case .DoubleAttributeType, .FloatAttributeType:
+                case .DoubleAttributeType, .FloatAttributeType, .DecimalAttributeType:
                     if !contains(value, ".") {
                         value += ".0"
                     }
