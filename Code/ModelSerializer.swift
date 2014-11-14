@@ -22,13 +22,17 @@ public class ModelSerializer {
     }
 
     func entities() -> [XMLNode] {
-        return (model.entities as [NSEntityDescription]).map({ EntitySerializer(entity: $0).generate() })
+        return (model.entities.sorted({ (entity1, entity2) -> Bool in
+            return entity1.name < entity2.name
+            }) as [NSEntityDescription]).map({ EntitySerializer(entity: $0).generate() })
     }
 
     func elements() -> XMLElement {
         var elements : [XMLNode] = []
 
-        for entityObject in model.entities {
+        for entityObject in model.entities.sorted({ (entity1, entity2) -> Bool in
+            return entity1.name < entity2.name
+        }) {
             let entity = entityObject as NSEntityDescription
             elements.append(</"element" | ["name": entity.name!] | ["positionX": "0"] | ["positionY": "0"] | ["width": "0"] | ["height": "0"])
         }
