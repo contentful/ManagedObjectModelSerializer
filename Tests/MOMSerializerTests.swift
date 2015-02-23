@@ -78,5 +78,34 @@ class MOMSerializerTests: XCTestCase {
         NSFileManager().removeItemAtURL(modelURL, error: nil)
         NSFileManager().removeItemAtURL(outputURL, error: nil)
     }
+
+    func testNewVersion() {
+        let url = NSBundle(forClass: self.dynamicType).URLForResource("CoreDataExample", withExtension: "momd")
+        let model = NSManagedObjectModel(contentsOfURL: url!)
+        XCTAssertNotNil(model, "")
+
+        let tempPathURL = temporaryFileURL("").URLByDeletingLastPathComponent!
+
+        for i in 0...4 {
+            let error = ModelSerializer(model: model!).generateBundle("Test", atPath:tempPathURL)
+            XCTAssertNil(error)
+        }
+        let modelURL = tempPathURL.URLByAppendingPathComponent("Test.xcdatamodeld")
+
+        let urls = NSFileManager.defaultManager().contentsOfDirectoryAtURL(modelURL, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles, error: nil) as [NSURL]?
+
+        if let urls = urls {
+            let names = urls.map({ (url) -> String in return (url.lastPathComponent)! })
+            XCTAssertEqual([ "Test 2.xcdatamodel", "Test 3.xcdatamodel", "Test 4.xcdatamodel", "Test 5.xcdatamodel", "Test.xcdatamodel" ], names, "")
+        } else {
+            XCTFail("Could not list URLs of Core Data model.")
+        }
+
+        let currentVersion = NSString(contentsOfURL: modelURL.URLByAppendingPathComponent(".xccurrentversion"), encoding: NSUTF8StringEncoding, error: nil)!
+        let expectedVersion = ModelSerializer(model: model!).generateCurrentVersionPlist("Test 5").toString(encoding: "utf8") as NSString
+        XCTAssertEqual(expectedVersion, currentVersion, "")
+
+        NSFileManager().removeItemAtURL(modelURL, error: nil)
+    }
     
 }

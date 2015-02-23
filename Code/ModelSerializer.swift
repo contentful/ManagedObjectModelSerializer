@@ -57,7 +57,13 @@ public class ModelSerializer {
 
     public func generateBundle(name : String, atPath: NSURL) -> NSError! {
         let modeldPath = atPath.URLByAppendingPathComponent(name + ".xcdatamodeld")
-        let modelPath = modeldPath.URLByAppendingPathComponent(name + ".xcdatamodel")
+
+        var actualName = name
+        if NSFileManager.defaultManager().fileExistsAtPath(modeldPath.path!) {
+            actualName = name + String(format:" %i", lastVersion(modeldPath) + 1)
+        }
+
+        let modelPath = modeldPath.URLByAppendingPathComponent(actualName + ".xcdatamodel")
 
         var errorPtr : NSErrorPointer = nil
         if (!NSFileManager().createDirectoryAtURL(modelPath, withIntermediateDirectories: true, attributes: nil, error: errorPtr)) {
@@ -65,7 +71,7 @@ public class ModelSerializer {
         }
 
         let currentVersionPath = modeldPath.URLByAppendingPathComponent(".xccurrentversion")
-        if (!generateCurrentVersionPlist(name).toString(encoding: "utf8").writeToURL(currentVersionPath, atomically: true, encoding: NSUTF8StringEncoding, error: errorPtr)) {
+        if (!generateCurrentVersionPlist(actualName).toString(encoding: "utf8").writeToURL(currentVersionPath, atomically: true, encoding: NSUTF8StringEncoding, error: errorPtr)) {
             return errorPtr.memory!
         }
 
@@ -75,5 +81,21 @@ public class ModelSerializer {
         }
 
         return nil
+    }
+
+    func lastVersion(modeldPath: NSURL) -> Int {
+        let files = NSFileManager.defaultManager().contentsOfDirectoryAtURL(modeldPath, includingPropertiesForKeys: nil, options: .SkipsSubdirectoryDescendants, error: nil)
+
+        var lastVersion = 1
+
+        if let files = files {
+            for file in files {
+                if let version = (file as NSURL).path?.stringByDeletingPathExtension.componentsSeparatedByString(" ").last?.toInt() {
+                    lastVersion = version > lastVersion ? version : lastVersion
+                }
+            }
+        }
+
+        return lastVersion
     }
 }
