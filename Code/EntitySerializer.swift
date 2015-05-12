@@ -45,7 +45,7 @@ class EntitySerializer: NSObject {
     }
 
     func attributes() -> [XMLNode] {
-        let attributes = ((entity.attributesByName as NSDictionary).allValues as [NSAttributeDescription]).sorted({ (attr1 : NSAttributeDescription, attr2 : NSAttributeDescription) -> Bool in
+        let attributes = ((entity.attributesByName as NSDictionary).allValues as! [NSAttributeDescription]).sorted({ (attr1 : NSAttributeDescription, attr2 : NSAttributeDescription) -> Bool in
             return attr1.name < attr2.name
         })
         return attributes.map({
@@ -76,7 +76,7 @@ class EntitySerializer: NSObject {
 
     // TODO: Support delete rules
     func relationships() -> [XMLNode] {
-        let relationships = ((entity.relationshipsByName as NSDictionary).allValues as [NSRelationshipDescription]).sorted { (rel1 : NSRelationshipDescription, rel2 : NSRelationshipDescription) -> Bool in
+        let relationships = ((entity.relationshipsByName as NSDictionary).allValues as! [NSRelationshipDescription]).sorted { (rel1 : NSRelationshipDescription, rel2 : NSRelationshipDescription) -> Bool in
             return rel1.name < rel2.name
         }
         return relationships.map({

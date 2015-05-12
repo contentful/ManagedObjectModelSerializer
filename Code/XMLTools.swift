@@ -10,7 +10,7 @@ import Foundation
 
 func temporaryFileURL(filename : String) -> NSURL {
     let fileName = NSString(format: "%@_%@", NSProcessInfo.processInfo().globallyUniqueString, filename)
-    return NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent(fileName))!
+    return NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent(fileName as String))!
 }
 
 func temporaryURLForString(string : String, filename : String) -> NSURL {
@@ -21,7 +21,7 @@ func temporaryURLForString(string : String, filename : String) -> NSURL {
 
 func xmllint(xmlString : String, options : String) -> String {
     let temporaryURL = temporaryURLForString(xmlString, "out.xml")
-    let result = $(NSString(format: "xmllint %@ %@", options, temporaryURL.path!))
+    let result = $(NSString(format: "xmllint %@ %@", options, temporaryURL.path!) as String)
 
     NSFileManager().removeItemAtURL(temporaryURL, error: nil)
     return result
@@ -36,7 +36,7 @@ func diff(oneString : String, anotherString: String) -> String {
     let temporaryURL1 = temporaryURLForString(oneString, "1.xml")
     let temporaryURL2 = temporaryURLForString(anotherString, "2.xml")
 
-    let result = $(NSString(format: "diff -w %@ %@", temporaryURL1.path!, temporaryURL2.path!))
+    let result = $(NSString(format: "diff -w %@ %@", temporaryURL1.path!, temporaryURL2.path!) as String)
 
     NSFileManager().removeItemAtURL(temporaryURL1, error: nil)
     NSFileManager().removeItemAtURL(temporaryURL2, error: nil)
@@ -47,8 +47,8 @@ func diff(oneString : String, anotherString: String) -> String {
 public class XMLTools {
     public class func compareXML(xmlString : String, withXMLAtPath : String) -> String {
         var compareXML = NSString(contentsOfFile: withXMLAtPath, encoding: NSUTF8StringEncoding, error: nil)!
-        compareXML = canonicalizeXML(compareXML)
+        compareXML = canonicalizeXML(compareXML as String)
 
-        return diff(canonicalizeXML(xmlString), compareXML)
+        return diff(canonicalizeXML(xmlString), compareXML as String)
     }
 }

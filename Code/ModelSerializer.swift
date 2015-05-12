@@ -24,7 +24,7 @@ public class ModelSerializer {
     func entities() -> [XMLNode] {
         return (model.entities.sorted({ (entity1, entity2) -> Bool in
             return entity1.name < entity2.name
-            }) as [NSEntityDescription]).map({ EntitySerializer(entity: $0).generate() })
+            }) as! [NSEntityDescription]).map({ EntitySerializer(entity: $0).generate() })
     }
 
     func elements() -> XMLElement {
@@ -33,7 +33,7 @@ public class ModelSerializer {
         for entityObject in model.entities.sorted({ (entity1, entity2) -> Bool in
             return entity1.name < entity2.name
         }) {
-            let entity = entityObject as NSEntityDescription
+            let entity = entityObject as! NSEntityDescription
             elements.append(</"element" | ["name": entity.name!] | ["positionX": "0"] | ["positionY": "0"] | ["width": "0"] | ["height": "0"])
         }
 
@@ -90,7 +90,7 @@ public class ModelSerializer {
 
         if let files = files {
             for file in files {
-                if let version = (file as NSURL).path?.stringByDeletingPathExtension.componentsSeparatedByString(" ").last?.toInt() {
+                if let version = (file as! NSURL).path?.stringByDeletingPathExtension.componentsSeparatedByString(" ").last?.toInt() {
                     lastVersion = version > lastVersion ? version : lastVersion
                 }
             }

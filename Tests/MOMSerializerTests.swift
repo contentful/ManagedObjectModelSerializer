@@ -12,7 +12,7 @@ import XCTest
 class MOMSerializerTests: XCTestCase {
     func temporaryFileURL(filename : String) -> NSURL {
         let fileName = NSString(format: "%@_%@", NSProcessInfo.processInfo().globallyUniqueString, filename)
-        return NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent(fileName))!
+        return NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent(fileName as String))!
     }
 
     func temporaryURLForString(string : String, filename : String) -> NSURL {
@@ -70,7 +70,7 @@ class MOMSerializerTests: XCTestCase {
 
         let modelURL = tempPathURL.URLByAppendingPathComponent("Test.xcdatamodeld")
         let outputURL = tempPathURL.URLByAppendingPathComponent("Test.momd")
-        println($(NSString(format: "xcrun momc %@ %@", modelURL.path!, outputURL.path!)))
+        println($(NSString(format: "xcrun momc %@ %@", modelURL.path!, outputURL.path!) as String))
 
         let outputModel = NSManagedObjectModel(contentsOfURL: outputURL)
         XCTAssertNotNil(outputModel, "")
@@ -92,7 +92,7 @@ class MOMSerializerTests: XCTestCase {
         }
         let modelURL = tempPathURL.URLByAppendingPathComponent("Test.xcdatamodeld")
 
-        let urls = NSFileManager.defaultManager().contentsOfDirectoryAtURL(modelURL, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles, error: nil) as [NSURL]?
+        let urls = NSFileManager.defaultManager().contentsOfDirectoryAtURL(modelURL, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles, error: nil) as! [NSURL]?
 
         if let urls = urls {
             let names = urls.map({ (url) -> String in return (url.lastPathComponent)! })
