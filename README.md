@@ -15,7 +15,7 @@ let bundleName = "MyModel"
 let model: NSManagedObjectModel
 let pathURL: NSURL
 
-let error = ModelSerializer(model: model!).generateBundle(bundleName, atPath:pathURL)
+try ModelSerializer(model: model!).generateBundle(bundleName, atPath:pathURL)
 ```
 
 This will generate a `MyModel.xcdatamodeld` bundle with one model version,
