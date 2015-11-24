@@ -22,18 +22,18 @@ public class ModelSerializer {
     }
 
     func entities() -> [XMLNode] {
-        return (model.entities.sorted({ (entity1, entity2) -> Bool in
+        return (model.entities.sort({ (entity1, entity2) -> Bool in
             return entity1.name < entity2.name
-            }) as! [NSEntityDescription]).map({ EntitySerializer(entity: $0).generate() })
+            }) ).map({ EntitySerializer(entity: $0).generate() })
     }
 
     func elements() -> XMLElement {
         var elements : [XMLNode] = []
 
-        for entityObject in model.entities.sorted({ (entity1, entity2) -> Bool in
+        for entityObject in model.entities.sort({ (entity1, entity2) -> Bool in
             return entity1.name < entity2.name
         }) {
-            let entity = entityObject as! NSEntityDescription
+            let entity = entityObject 
             elements.append(</"element" | ["name": entity.name!] | ["positionX": "0"] | ["positionY": "0"] | ["width": "0"] | ["height": "0"])
         }
 
@@ -55,7 +55,7 @@ public class ModelSerializer {
             ], doctype: doctype)
     }
 
-    public func generateBundle(name : String, atPath: NSURL) -> NSError! {
+    public func generateBundle(name : String, atPath: NSURL) throws {
         let modeldPath = atPath.URLByAppendingPathComponent(name + ".xcdatamodeld")
 
         var actualName = name
@@ -64,33 +64,22 @@ public class ModelSerializer {
         }
 
         let modelPath = modeldPath.URLByAppendingPathComponent(actualName + ".xcdatamodel")
-
-        var errorPtr : NSErrorPointer = nil
-        if (!NSFileManager().createDirectoryAtURL(modelPath, withIntermediateDirectories: true, attributes: nil, error: errorPtr)) {
-            return errorPtr.memory!
-        }
-
         let currentVersionPath = modeldPath.URLByAppendingPathComponent(".xccurrentversion")
-        if (!generateCurrentVersionPlist(actualName).toString(encoding: "utf8").writeToURL(currentVersionPath, atomically: true, encoding: NSUTF8StringEncoding, error: errorPtr)) {
-            return errorPtr.memory!
-        }
-
         let actualModelPath = modelPath.URLByAppendingPathComponent("contents")
-        if (!generate().toString(encoding: "utf8").writeToURL(actualModelPath, atomically: true, encoding: NSUTF8StringEncoding, error: errorPtr)) {
-            return errorPtr.memory!
-        }
 
-        return nil
+        try NSFileManager().createDirectoryAtURL(modelPath, withIntermediateDirectories: true, attributes: nil)
+        try generateCurrentVersionPlist(actualName).toString("utf8").writeToURL(currentVersionPath, atomically: true, encoding: NSUTF8StringEncoding)
+        try generate().toString("utf8").writeToURL(actualModelPath, atomically: true, encoding: NSUTF8StringEncoding)
     }
 
     func lastVersion(modeldPath: NSURL) -> Int {
-        let files = NSFileManager.defaultManager().contentsOfDirectoryAtURL(modeldPath, includingPropertiesForKeys: nil, options: .SkipsSubdirectoryDescendants, error: nil)
+        let files = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(modeldPath, includingPropertiesForKeys: nil, options: .SkipsSubdirectoryDescendants)
 
         var lastVersion = 1
 
         if let files = files {
             for file in files {
-                if let version = (file as! NSURL).path?.stringByDeletingPathExtension.componentsSeparatedByString(" ").last?.toInt() {
+                if let path = file.URLByDeletingPathExtension?.path, last = path.componentsSeparatedByString(" ").last, version = Int(last) {
                     lastVersion = version > lastVersion ? version : lastVersion
                 }
             }

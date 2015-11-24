@@ -10,45 +10,57 @@ import Foundation
 
 func temporaryFileURL(filename : String) -> NSURL {
     let fileName = NSString(format: "%@_%@", NSProcessInfo.processInfo().globallyUniqueString, filename)
-    return NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent(fileName as String))!
+    return NSURL(fileURLWithPath: (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent(fileName as String))
 }
 
 func temporaryURLForString(string : String, filename : String) -> NSURL {
     let  temporaryURL = temporaryFileURL("out.xml")
-    string.writeToURL(temporaryURL, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+    do {
+        try string.writeToURL(temporaryURL, atomically: true, encoding: NSUTF8StringEncoding)
+    } catch _ {
+    }
     return temporaryURL
 }
 
 func xmllint(xmlString : String, options : String) -> String {
-    let temporaryURL = temporaryURLForString(xmlString, "out.xml")
+    let temporaryURL = temporaryURLForString(xmlString, filename: "out.xml")
     let result = $(NSString(format: "xmllint %@ %@", options, temporaryURL.path!) as String)
 
-    NSFileManager().removeItemAtURL(temporaryURL, error: nil)
+    do {
+        try NSFileManager().removeItemAtURL(temporaryURL)
+    } catch _ {
+    }
     return result
 }
 
 func canonicalizeXML(xmlString : String) -> String {
-    var result = xmllint(xmlString, "--c14n")
-    return xmllint(result, "--format")
+    let result = xmllint(xmlString, options: "--c14n")
+    return xmllint(result, options: "--format")
 }
 
 func diff(oneString : String, anotherString: String) -> String {
-    let temporaryURL1 = temporaryURLForString(oneString, "1.xml")
-    let temporaryURL2 = temporaryURLForString(anotherString, "2.xml")
+    let temporaryURL1 = temporaryURLForString(oneString, filename: "1.xml")
+    let temporaryURL2 = temporaryURLForString(anotherString, filename: "2.xml")
 
     let result = $(NSString(format: "diff -w %@ %@", temporaryURL1.path!, temporaryURL2.path!) as String)
 
-    NSFileManager().removeItemAtURL(temporaryURL1, error: nil)
-    NSFileManager().removeItemAtURL(temporaryURL2, error: nil)
+    do {
+        try NSFileManager().removeItemAtURL(temporaryURL1)
+    } catch _ {
+    }
+    do {
+        try NSFileManager().removeItemAtURL(temporaryURL2)
+    } catch _ {
+    }
 
     return result
 }
 
 public class XMLTools {
     public class func compareXML(xmlString : String, withXMLAtPath : String) -> String {
-        var compareXML = NSString(contentsOfFile: withXMLAtPath, encoding: NSUTF8StringEncoding, error: nil)!
+        var compareXML = try! NSString(contentsOfFile: withXMLAtPath, encoding: NSUTF8StringEncoding)
         compareXML = canonicalizeXML(compareXML as String)
 
-        return diff(canonicalizeXML(xmlString), compareXML as String)
+        return diff(canonicalizeXML(xmlString), anotherString: compareXML as String)
     }
 }
