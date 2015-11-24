@@ -4,7 +4,7 @@ A framework for serializing an in-memory `NSManagedObjectModel`
 into the same XML format Xcode generates when using the built-in
 CoreData modelling tools.
 
-MOMSerializer is written in Swift and requires Xcode 6.3 to compile.
+MOMSerializer is written in Swift and requires Xcode 7.1 to compile.
 It uses [ECoXiS][1] for the XML serialization and [SwiftShell][2] for
 launching some CLI utilities as part of the testsuite.
 
