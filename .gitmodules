@@ -1,6 +1,6 @@
 [submodule "vendor/ECoXiS"]
 	path = vendor/ECoXiS
-	url = git@github.com:neonichu/ECoXiS.git
+	url = git@github.com:IvIePhisto/ECoXiS.git
 [submodule "vendor/SwiftShell"]
 	path = vendor/SwiftShell
 	url = https://github.com/kareman/SwiftShell.git
