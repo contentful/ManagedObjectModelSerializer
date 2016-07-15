@@ -59,17 +59,17 @@ public class ModelSerializer {
         let modeldPath = atPath.URLByAppendingPathComponent(name + ".xcdatamodeld")
 
         var actualName = name
-        if NSFileManager.defaultManager().fileExistsAtPath(modeldPath.path!) {
-            actualName = name + String(format:" %i", lastVersion(modeldPath) + 1)
+        if NSFileManager.defaultManager().fileExistsAtPath(modeldPath!.path!) {
+            actualName = name + String(format:" %i", lastVersion(modeldPath!) + 1)
         }
 
-        let modelPath = modeldPath.URLByAppendingPathComponent(actualName + ".xcdatamodel")
-        let currentVersionPath = modeldPath.URLByAppendingPathComponent(".xccurrentversion")
-        let actualModelPath = modelPath.URLByAppendingPathComponent("contents")
+        let modelPath = modeldPath!.URLByAppendingPathComponent(actualName + ".xcdatamodel")
+        let currentVersionPath = modeldPath!.URLByAppendingPathComponent(".xccurrentversion")
+        let actualModelPath = modelPath!.URLByAppendingPathComponent("contents")
 
-        try NSFileManager().createDirectoryAtURL(modelPath, withIntermediateDirectories: true, attributes: nil)
-        try generateCurrentVersionPlist(actualName).toString("utf8").writeToURL(currentVersionPath, atomically: true, encoding: NSUTF8StringEncoding)
-        try generate().toString("utf8").writeToURL(actualModelPath, atomically: true, encoding: NSUTF8StringEncoding)
+        try NSFileManager().createDirectoryAtURL(modelPath!, withIntermediateDirectories: true, attributes: nil)
+        try generateCurrentVersionPlist(actualName).toString("utf8").writeToURL(currentVersionPath!, atomically: true, encoding: NSUTF8StringEncoding)
+        try generate().toString("utf8").writeToURL(actualModelPath!, atomically: true, encoding: NSUTF8StringEncoding)
     }
 
     func lastVersion(modeldPath: NSURL) -> Int {

@@ -72,17 +72,17 @@ class MOMSerializerTests: XCTestCase {
 
         let modelURL = tempPathURL.URLByAppendingPathComponent("Test.xcdatamodeld")
         let outputURL = tempPathURL.URLByAppendingPathComponent("Test.momd")
-        print($(NSString(format: "xcrun momc %@ %@", modelURL.path!, outputURL.path!) as String))
+        print($(NSString(format: "xcrun momc %@ %@", modelURL!.path!, outputURL!.path!) as String))
 
-        let outputModel = NSManagedObjectModel(contentsOfURL: outputURL)
+        let outputModel = NSManagedObjectModel(contentsOfURL: outputURL!)
         XCTAssertNotNil(outputModel, "")
 
         do {
-            try NSFileManager().removeItemAtURL(modelURL)
+            try NSFileManager().removeItemAtURL(modelURL!)
         } catch _ {
         }
         do {
-            try NSFileManager().removeItemAtURL(outputURL)
+            try NSFileManager().removeItemAtURL(outputURL!)
         } catch _ {
         }
     }
@@ -99,7 +99,7 @@ class MOMSerializerTests: XCTestCase {
         }
         let modelURL = tempPathURL.URLByAppendingPathComponent("Test.xcdatamodeld")
 
-        let urls = (try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(modelURL, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles))
+        let urls = (try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(modelURL!, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles))
 
         if let urls = urls {
             let names = urls.map({ (url) -> String in return (url.lastPathComponent)! })
@@ -108,12 +108,12 @@ class MOMSerializerTests: XCTestCase {
             XCTFail("Could not list URLs of Core Data model.")
         }
 
-        let currentVersion = try! NSString(contentsOfURL: modelURL.URLByAppendingPathComponent(".xccurrentversion"), encoding: NSUTF8StringEncoding)
+        let currentVersion = try! NSString(contentsOfURL: modelURL!.URLByAppendingPathComponent(".xccurrentversion")!, encoding: NSUTF8StringEncoding)
         let expectedVersion = ModelSerializer(model: model!).generateCurrentVersionPlist("Test 5").toString("utf8") as NSString
         XCTAssertEqual(expectedVersion, currentVersion, "")
 
         do {
-            try NSFileManager().removeItemAtURL(modelURL)
+            try NSFileManager().removeItemAtURL(modelURL!)
         } catch _ {
         }
     }
